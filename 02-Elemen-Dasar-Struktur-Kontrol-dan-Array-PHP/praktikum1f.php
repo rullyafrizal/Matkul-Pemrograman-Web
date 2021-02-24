@@ -8,7 +8,7 @@ $temp = null;
 //    echo "{$arrayv},";
 //}
 
-echo implode(',', $arrayVal) . '<br>';
+echo 'Terdapat nilai array : ' . implode(',', $arrayVal) . '<br>';
 
 for($i = 0; $i < count($arrayVal); $i++)
 {
@@ -28,5 +28,5 @@ for($i = 0; $i < count($arrayVal); $i++)
 //    echo "{$arrayv},";
 //}
 
-echo implode(',', $arrayVal);
+echo 'Data yang terurut : ' . implode(',', $arrayVal);
 

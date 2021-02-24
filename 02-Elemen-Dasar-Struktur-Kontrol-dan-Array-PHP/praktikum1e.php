@@ -1,6 +1,6 @@
 <?php
 
-$bilanganMaksimum = 6;
+$bilanganMaksimum = 5;
 $hasil = 0;
 
 for ($i = 1; $i <= $bilanganMaksimum; $i++)
