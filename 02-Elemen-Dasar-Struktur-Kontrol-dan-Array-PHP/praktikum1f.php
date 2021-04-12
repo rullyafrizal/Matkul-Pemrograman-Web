@@ -28,5 +28,23 @@ for($i = 0; $i < count($arrayVal); $i++)
 //    echo "{$arrayv},";
 //}
 
-echo 'Data yang terurut : ' . implode(',', $arrayVal);
+echo 'Data yang terurut : ' . implode(',', $arrayVal) . '<br>';
+
+
+
+$string1 = array('rully', 'vala', 'va', 'rullyafrizal', 'val');
+echo '<br> Sebelum Urut : ' . implode(',', $string1) . '<br>';
+$tempo = null;
+
+for($i = 0; $i < count($string1); $i++){
+    for($j = $i + 1; $j < count($string1); $j++){
+        if(strlen($string1[$i]) > strlen($string1[$j])){
+            $tempo = $string1[$i];
+            $string1[$i] = $string1[$j];
+            $string1[$j] = $tempo;
+        }
+    }
+}
+
+echo 'Setelah Urut : ' . implode(',', $string1) . '<br>';
 

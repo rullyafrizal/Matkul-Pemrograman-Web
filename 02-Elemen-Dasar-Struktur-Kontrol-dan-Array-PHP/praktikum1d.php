@@ -22,12 +22,14 @@ if($gajiPokok >= 1000000)
     $pajak = 5/100 * $gajiPokok;
 }
 
-$gajiBersih = $gajiPokok + $tunjangan - $pajak;
+$gajiBersih = (double)($gajiPokok + $tunjangan - $pajak);
 
 echo "Masukkan besar gaji pokok : $gajiPokok <br>" .
     "Masukkan golongan : $golongan <br>" .
-    "Besar Tunjangan : $tunjangan <br>" .
     "Pajak : $pajak <br>" .
-    "Gaji Bersih : $gajiBersih <br>";
+    "Gaji Bersih : " . number_format($gajiBersih, 2)  . "<br>";
 
+printf("tunjangan : %1\$.1f <br>", $tunjangan) ;
+
+echo "jancok";
 

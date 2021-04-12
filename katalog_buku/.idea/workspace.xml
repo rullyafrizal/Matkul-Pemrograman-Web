@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b8eb2c76-d2ef-492c-80c6-6356e10d5c1b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1psoxycOwTiKuESdoVqDxjVA6bT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sanbercode-Batch-23" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8eb2c76-d2ef-492c-80c6-6356e10d5c1b" name="Default Changelist" comment="" />
+      <created>1615981408661</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615981408661</updated>
+      <workItem from="1615981409890" duration="7022000" />
+      <workItem from="1616418541985" duration="1150000" />
+      <workItem from="1616420137180" duration="779000" />
+      <workItem from="1616558743106" duration="5747000" />
+      <workItem from="1616570905345" duration="310000" />
+      <workItem from="1617090693051" duration="289000" />
+      <workItem from="1617095475738" duration="612000" />
+      <workItem from="1617103025620" duration="157000" />
+      <workItem from="1617103186387" duration="34000" />
+      <workItem from="1617103222811" duration="760000" />
+      <workItem from="1617172746412" duration="357000" />
+      <workItem from="1617194126157" duration="1225000" />
+      <workItem from="1617253934407" duration="537000" />
+      <workItem from="1617265367795" duration="1263000" />
+      <workItem from="1617287343406" duration="3133000" />
+      <workItem from="1617417164724" duration="13000" />
+      <workItem from="1617425708568" duration="1404000" />
+      <workItem from="1617512360894" duration="855000" />
+      <workItem from="1617514489778" duration="21000" />
+      <workItem from="1617634293609" duration="4566000" />
+      <workItem from="1617681588930" duration="71000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
