@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8eb2c76-d2ef-492c-80c6-6356e10d5c1b" name="Default Changelist" comment="" />
+    <list default="true" id="b8eb2c76-d2ef-492c-80c6-6356e10d5c1b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/buku.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/buku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/detailbuku.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/detailbuku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editbuku.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editbuku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/tambahblog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/tambahblog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/tambahbuku.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/tambahbuku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/ubahpassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/ubahpassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/user.zip" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sanbercode-Batch-23" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -62,6 +72,11 @@
       <workItem from="1617514489778" duration="21000" />
       <workItem from="1617634293609" duration="4566000" />
       <workItem from="1617681588930" duration="71000" />
+      <workItem from="1618234093495" duration="1514000" />
+      <workItem from="1618239742429" duration="14000" />
+      <workItem from="1619012662395" duration="6110000" />
+      <workItem from="1619097765011" duration="3506000" />
+      <workItem from="1619157496522" duration="1972000" />
     </task>
     <servers />
   </component>

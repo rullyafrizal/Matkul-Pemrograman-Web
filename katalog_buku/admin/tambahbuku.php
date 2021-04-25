@@ -1,3 +1,7 @@
+<?php
+include('../koneksi/koneksi.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,13 +47,21 @@
       <!-- form start -->
       </br></br>
       <div class="col-sm-10">
-          <div class="alert alert-danger" role="alert">Maaf judul wajib di isi</div>
+          <?php
+          if(!empty($_GET['notif']) && !empty($_GET['jenis'])){
+              $jenis = $_GET['jenis'];
+              if($_GET['notif']=="tambahkosong") {
+                  echo '<div class="alert alert-danger" role="alert">
+                      Maaf ' . $jenis . ' wajib di isi</div>';
+              }
+          }
+          ?>
       </div>
-      <form class="form-horizontal">
+      <form class="form-horizontal" action="konfirmasiTambahBuku.php" method="POST" enctype="multipart/form-data">
         <div class="card-body">
           
           <div class="form-group row">
-            <label for="foto" class="col-sm-3 col-form-label">Cover Buku </label>
+            <label for="cover" class="col-sm-3 col-form-label">Cover Buku </label>
             <div class="col-sm-7">
               <div class="custom-file">
                 <input type="file" class="custom-file-input" name="cover" id="customFile">
@@ -57,20 +69,28 @@
               </div>  
             </div>
           </div>
-          <div class="form-group row">
-            <label for="kategori" class="col-sm-3 col-form-label">Kategori Buku</label>
-            <div class="col-sm-7">
-              <select class="form-control" id="kategori">
-                <option value="0">- Pilih Kategori -</option>
-                <option value="Website">Website</option>
-                <option value="Mobile">Mobile</option>
-              </select>
+            <div class="form-group row">
+                <label for="kategori" class="col-sm-3 col-form-label">Kategori
+                    Buku</label>
+                <div class="col-sm-7">
+                    <select class="form-control" id="kategori" name="kategori_buku">
+                        <option value="">- Pilih Kategori -</option>
+                        <?php
+                        $sql_k = "SELECT `id_kategori_buku`,`kategori_buku` FROM `kategori_buku` ORDER BY `id_kategori_buku`";
+                        $query_k = mysqli_query($koneksi, $sql_k);
+                        while($data_k = mysqli_fetch_row($query_k)){
+                            $id_kat = $data_k[0];
+                            $kat = $data_k[1];
+                            ?>
+                            <option value="<?php echo $id_kat;?>"><?php echo $kat;?></option>
+                        <?php }?>
+                    </select>
+                </div>
             </div>
-          </div>
           <div class="form-group row">
             <label for="nim" class="col-sm-3 col-form-label">Judul</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" name="nim" id="nim" value="">
+              <input type="text" class="form-control" name="judul" id="judul" value="">
             </div>
           </div>
           <div class="form-group row">
@@ -79,21 +99,28 @@
               <input type="text" class="form-control" name="pengarang" id="pengarang" value="">
             </div>
           </div>
-          <div class="form-group row">
-            <label for="kategori" class="col-sm-3 col-form-label">Penerbit</label>
-            <div class="col-sm-7">
-              <select class="form-control" id="kategori">
-                <option value="0">- Pilih penerbit -</option>
-                <option value="Andi">Andi</option>
-                <option value="Lokomedia">Lokomedia</option>
-              </select>
+            <div class="form-group row">
+                <label for="penerbit" class="col-sm-3 col-form-label">Penerbit</label>
+                <div class="col-sm-7">
+                    <select class="form-control" id="penerbit" name="penerbit">
+                        <option value="">- Pilih penerbit -</option>
+                        <?php
+                        $sql_t = "SELECT `id_penerbit`,`penerbit` FROM `penerbit` ORDER BY `id_penerbit`";
+                        $query_t = mysqli_query($koneksi, $sql_t);
+                        while($data_t = mysqli_fetch_row($query_t)){
+                            $id_terbit = $data_t[0];
+                            $terbit = $data_t[1];
+                            ?>
+                            <option value="<?php echo $id_terbit;?>"><?php echo $terbit;?></option>
+                        <?php }?>
+                    </select>
+                </div>
             </div>
-          </div>
           <div class="form-group row">
             <label for="tanggal" class="col-sm-3 col-form-label">Tahun Terbit</label>
             <div class="col-sm-7">
               <div class="input-group date">
-                <input type="text" class="form-control" name="tanggal" id="datepicker-year"  autocomplete="off"
+                <input type="text" class="form-control" name="tahun_terbit" id="datepicker-year"  autocomplete="off"
                 value="">
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
@@ -106,16 +133,22 @@
             <div class="col-sm-7">
               <textarea class="form-control" name="sinopsis" id="editor1" rows="12"></textarea>
             </div>
-          </div>          
-          <div class="form-group row">
-            <label for="hobi" class="col-sm-3 col-form-label">Tag</label>
-            <div class="col-sm-7">
-              <input type="checkbox"  name="PHP"> PHP </br>
-              <input type="checkbox"  name="MySQL"> MySQL
+          </div>
+            <div class="form-group row">
+                <label for="tag" class="col-sm-3 col-form-label">Tag</label>
+                <div class="col-sm-7">
+                    <?php
+                    $sql_g = "SELECT `id_tag`,`tag` FROM `tag` ORDER BY `tag`";
+                    $query_g = mysqli_query($koneksi, $sql_g);
+                    while($data_g = mysqli_fetch_row($query_g)){
+                        $id_tg = $data_g[0];
+                        $tg = $data_g[1];
+                        ?>
+                        <input type="checkbox" name="tag[]" value="<?php echo $id_tg;?>">
+                        <?php echo $tg;?> </br>
+                    <?php }?>
+                </div>
             </div>
-          </div>
-
-          </div>
         </div>
 
       </div>
@@ -126,7 +159,7 @@
           </div>  
         </div>
         <!-- /.card-footer -->
-      </form>
+      </section>
     </div>
     <!-- /.card -->
 

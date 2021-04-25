@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,31 +39,66 @@
       </div>
       <!-- /.card-header -->
       <!-- form start -->
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="POST" action="konfirmasiUbahPassword.php">
         <div class="card-body">
-          <h6>
+          <h6 class="mb-4">
             <i class="text-blue"><i class="fas fa-info-circle"></i> Silahkan memasukkan password lama dan password baru Anda untuk mengubah password.</i>
-          </h6><br>
-          
+          </h6>
+            <div class="col-sm-10">
+              <?php
+                  if (!empty($_GET['notif'])) {
+                      if ($_GET['notif'] == "ubahberhasil") {
+                          echo '<div class="alert alert-success" role="alert">
+                                        Data berhasil diubah</div>';
+                      }
+                  }
+              ?>
+            </div>
           <div class="form-group row">
             <label for="pass_lama" class="col-sm-3 col-form-label">Password Lama</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="pass_lama" value="">
-              <!--<span class="text-danger">Mohon maaf, password lama wajib diisi.</span>-->
+              <input type="password" class="form-control" name="pass_lama" id="pass_lama" value="">
+              <?php
+                if (!empty($_GET['notif'])) {
+                    if($_GET['notif']=="ubahkosong" && $_GET['jenis'] == "passLama"){
+                        echo '<span class="text-danger">Mohon maaf, password lama wajib diisi.</span>';
+                    } else if($_GET['notif']=="ubahsalah" && $_GET['jenis'] == "passLamaInvalid"){
+                        echo '<span class="text-danger">Mohon maaf, password lama salah.</span>';
+                    }
+                }
+              ?>
+
+
             </div>
           </div>
           <div class="form-group row">
             <label for="pass_baru" class="col-sm-3 col-form-label">Password Baru</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="pass_baru" value="">
-              <!--<span class="text-danger">Mohon maaf, password baru wajib diisi.</span>-->
+              <input type="password" class="form-control" name="pass_baru" id="pass_baru" value="">
+                <?php
+                if (!empty($_GET['notif'])) {
+                    if($_GET['notif']=="ubahkosong" && $_GET['jenis'] == "passBaru"){
+                        echo '<span class="text-danger">Mohon maaf, password baru wajib diisi.</span>';
+                    }
+                }
+                ?>
+
             </div>
           </div>
           <div class="form-group row">
             <label for="konfirmasi" class="col-sm-3 col-form-label">Konfirmasi Password Baru</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="konfirmasi" value="">
-              <span class="text-danger">Mohon maaf, konfirmasi password baru wajib diisi.</span>
+              <input type="password" class="form-control" name="konfirmasi" id="konfirmasi" value="">
+                <?php
+                if (!empty($_GET['notif'])) {
+                    if($_GET['notif']=="ubahkosong" && $_GET['jenis'] == "konfirmasi"){
+                        echo '<span class="text-danger">Mohon maaf, konfirmasi password baru wajib diisi.</span>';
+                    } else if($_GET['notif']=="ubahsalah" && $_GET['jenis'] == "passBaruInvalid"){
+                        echo '<span class="text-danger">Mohon maaf, password baru dan password konfirmasi harus sama.</span>';
+                    }
+                }
+                ?>
+
             </div>
           </div>
         </div>

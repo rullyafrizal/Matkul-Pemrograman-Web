@@ -1,12 +1,17 @@
+<?php
+session_start();
+include('../koneksi/koneksi.php');
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<?php include("includes/head.php") ?> 
+<?php
+include("includes/head.php");
+?>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 <?php include("includes/header.php") ?>
-
   <?php include("includes/sidebar.php") ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -33,7 +38,7 @@
 
     <div class="card card-info">
       <div class="card-header">
-        <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Tambah Data Blog</h3>
+        <h3 class="card-title" style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Tambah Data Blog</h3>
         <div class="card-tools">
           <a href="blog.php" class="btn btn-sm btn-warning float-right">
           <i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
@@ -41,57 +46,78 @@
       </div>
       <!-- /.card-header -->
       <!-- form start -->
-      </br></br>
+        <br>
       <div class="col-sm-10">
-          <div class="alert alert-danger" role="alert">Maaf judul wajib di isi</div>
+          <?php
+          if(!empty($_GET['notif']) && !empty($_GET['jenis'])){
+              $jenis = $_GET['jenis'];
+              if($_GET['notif']=="tambahkosong") {
+                  echo '<div class="alert alert-danger" role="alert">
+                      Maaf ' . $jenis . ' wajib di isi</div>';
+              }
+          }
+          ?>
       </div>
-      <form class="form-horizontal">
-        <div class="card-body">
-          <div class="form-group row">
-            <label for="kategori" class="col-sm-3 col-form-label">Kategori Blog</label>
-            <div class="col-sm-7">
-              <select class="form-control" id="kategori">
-                <option value="0">- Pilih Kategori -</option>
-                <option value="Teknologi">Teknologi</option>
-                <option value="Pemrograman">Pemrograman</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="nim" class="col-sm-3 col-form-label">Judul</label>
-            <div class="col-sm-7">
-              <input type="text" class="form-control" name="nim" id="nim" value="">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="isi" class="col-sm-3 col-form-label">Isi</label>
-            <div class="col-sm-7">
-              <textarea class="form-control" name="isi" id="editor1" rows="12"></textarea>
-            </div>
-          </div>
+      <form class="form-horizontal" action="konfirmasitambahblog.php" method="post" enctype="multipart/form-data">
+          <div class="card-body">
+              <div class="form-group row">
+                  <label for="kategori" class="col-sm-3 col-form-label">Kategori Blog</label>
+                  <div class="col-sm-7">
+                      <select class="form-control" id="kategoriblog" name="kategori_blog" value="">
+                          <option value="0">- Pilih Kategori -</option>
+                          <?php
+                          $sql_k = "SELECT `id_kategori_blog`,`kategori_blog` FROM `kategori_blog` ORDER BY `kategori_blog`";
+                          $query_k = mysqli_query($koneksi, $sql_k);
+                          while($data_k = mysqli_fetch_row($query_k)){
+                              $id_kat = $data_k[0];
+                              $kat = $data_k[1];
+                              ?>
+                              <option value="<?php echo $id_kat;?>"><?php echo $kat;?></option>
+                          <?php }?>
+                      </select>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="judul" class="col-sm-3 col-form-label">Judul</label>
+                  <div class="col-sm-7">
+                      <input type="text" class="form-control" name="judul" id="judul" value="">
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="tanggal" class="col-sm-3 col-form-label">Tanggal</label>
+                  <div class="col-sm-7">
+                      <div class="input-group rows ">
+                          <input type="date" class="form-control" name="tanggal" id="tanggal"  autocomplete="off"
+                                 value="">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="isi" class="col-sm-3 col-form-label">Isi</label>
+                  <div class="col-sm-7">
+                      <textarea class="form-control" name="isi" id="editor1" rows="12"></textarea>
+                  </div>
+              </div>
 
           </div>
-        </div>
+          <div class="card-footer">
+              <div class="col-sm-12">
+                  <button type="submit" class="btn btn-info float-right"><i class="fas fa-plus"></i> Tambah</button>
+              </div>
+          </div>
+      </form>
 
       </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-          <div class="col-sm-12">
-            <button type="submit" class="btn btn-info float-right"><i class="fas fa-plus"></i> Tambah</button>
-          </div>  
-        </div>
-        <!-- /.card-footer -->
-      </form>
-    </div>
-    <!-- /.card -->
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
+        <!-- /.card-footer -->
+
+    </div>
+
 
 </div>
+  <!-- /.content-wrapper -->
+  <?php include("includes/footer.php") ?>
 <!-- ./wrapper -->
 
 <?php include("includes/script.php") ?>
