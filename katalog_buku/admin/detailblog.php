@@ -1,7 +1,27 @@
+<?php
+session_start();
+include('../koneksi/koneksi.php');
+if(isset($_GET['data'])){
+    $id_blog = $_GET['data'];
+    //get data blog
+    $sql_b = "SELECT `b`.`judul`,`b`.`tanggal`,`b`.`isi`,`k`.`kategori_blog`, `u`.`nama` FROM `blog` `b` 
+                INNER JOIN `kategori_blog` `k` ON `b`.`id_kategori_blog` = `k`.`id_kategori_blog`
+                INNER JOIN `user` `u` ON `b`.`id_user` = `u`.`id_user`
+                WHERE `b`.`id_blog`='$id_blog'";
+    $query = mysqli_query($koneksi, $sql_b);
+    while($data = mysqli_fetch_row($query)){
+      $judul = $data[0];
+      $tanggal = $data[1];
+      $sinopsis= $data[2];
+      $kategori_blog = $data[3];
+      $penulis = $data[4];
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<?php include("includes/head.php") ?> 
+<?php include("includes/head.php") ?>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -41,36 +61,29 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <table class="table table-bordered">
-                    <tbody>                 
+                    <tbody>
                       <tr>
                         <td width="20%"><strong>Tanggal<strong></td>
-                        <td width="80%">24-2-2021</td>
-                      </tr>              
+                        <td width="80%"><?php echo $tanggal;?></td>
+                      </tr>
                       <tr>
                         <td width="20%"><strong>Kategori Blog<strong></td>
-                        <td width="80%">Teknologi</td>
-                      </tr>                 
+                        <td width="80%"><?php echo $kategori_blog;?></td>
+                      </tr>
                       <tr>
                         <td width="20%"><strong>Judul<strong></td>
-                        <td width="80%">Teknologi Terkini</td>
-                      </tr> 
+                        <td width="80%"><?php echo $judul;?></td>
+                      </tr>
                       <tr>
                         <td width="20%"><strong>Penulis<strong></td>
-                        <td width="80%">Salnan Ratih</td>
+                      <td width="80%"><?php echo $penulis ?></td>
                       </tr>
                       <tr>
                         <td width="20%"><strong>Isi<strong></td>
-                        <td width="80%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                        when an unknown printer took a galley of type and scrambled it to make a type 
-                        specimen book. It has survived not only five centuries, but also the leap into 
-                        electronic typesetting, remaining essentially unchanged. It was popularised in the
-                         1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                          recently with desktop publishing software like Aldus PageMaker including versions
-                           of Lorem Ipsum.</td>
+                        <td width="80%"><?php echo $sinopsis;?></td>
                       </tr>
                     </tbody>
-                  </table>  
+                  </table>
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">&nbsp;</div>

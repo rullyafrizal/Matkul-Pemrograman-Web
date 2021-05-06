@@ -6,6 +6,8 @@ $id_kategori_blog = $_POST['kategori_blog'];
 $tanggal = $_POST['tanggal'];
 $judul = $_POST['judul'];
 $isi = $_POST['isi'];
+$id_user = $_SESSION['id_user'];
+
 if (empty($id_kategori_blog)) {
     header("Location:tambahblog.php?notif=tambahkosong&jenis=kategoriblog");
 } else if (empty($judul)) {
@@ -13,8 +15,8 @@ if (empty($id_kategori_blog)) {
 } else if (empty($tanggal)) {
     header("Location:tambahblog.php?notif=tambahkosong&jenis=tanggal");
 } else {
-    $sql = "INSERT INTO `blog`(`id_kategori_blog`, `tanggal`, `judul`, `isi`)
-            VALUES ('$id_kategori_blog','$tanggal','$judul','$isi')";
+    $sql = "INSERT INTO `blog`(`id_kategori_blog`, `id_user`, `tanggal`, `judul`, `isi`)
+            VALUES ('$id_kategori_blog', '$id_user','$tanggal','$judul','$isi')";
     mysqli_query($koneksi, $sql);
     header("Location:blog.php?notif=tambahberhasil");
 }

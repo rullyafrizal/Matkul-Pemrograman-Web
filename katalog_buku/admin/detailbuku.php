@@ -4,11 +4,8 @@ include('../koneksi/koneksi.php');
 if(isset($_GET['data'])){
     $id_buku = $_GET['data'];
     //get data buku
-    $sql = "SELECT `b`.`cover`,`k`.`kategori_buku`,`b`.`judul`,
-            `b`.`pengarang`,`b`.`tahun_terbit`,
-            `p`.`penerbit`, `b`.`sinopsis` FROM `buku` `b`
-            INNER JOIN `kategori_buku` `k` ON
-            `b`.`id_kategori_buku`=`k`.`id_kategori_buku`
+    $sql = "SELECT `b`.`cover`,`k`.`kategori_buku`,`b`.`judul`, `b`.`pengarang`,`b`.`tahun_terbit`, `p`.`penerbit`, `b`.`sinopsis` FROM `buku` `b`
+            INNER JOIN `kategori_buku` `k` ON `b`.`id_kategori_buku`=`k`.`id_kategori_buku`
             INNER JOIN `penerbit` `p` ON `b`.`id_penerbit`= `p`.`id_penerbit`
             WHERE `b`.`id_buku`='$id_buku'";
     $query = mysqli_query($koneksi,$sql);

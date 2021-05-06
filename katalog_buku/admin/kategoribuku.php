@@ -117,7 +117,7 @@ if ((isset($_GET['aksi'])) && (isset($_GET['data']))) {
                   $katakunci_kategori = $_GET["katakunci"];
                   $sql_jum .= " where `kategori_buku` LIKE '%$katakunci_kategori%'";
                 }
-                $sql_jum .= " order by `kategori_buku`";
+                $sql_jum .= " order by `id_kategori_buku` DESC";
 
                 $query_jum = mysqli_query($koneksi, $sql_jum);
                 $jum_data = mysqli_num_rows($query_jum);
@@ -129,7 +129,7 @@ if ((isset($_GET['aksi'])) && (isset($_GET['data']))) {
                   $katakunci_kategori = $_GET["katakunci"];
                   $sql_k .= " where `kategori_buku` LIKE '%$katakunci_kategori%'";
                 }
-                $sql_k .= " ORDER BY `kategori_buku` limit $posisi, $batas ";
+                $sql_k .= " ORDER BY `id_kategori_buku` DESC limit $posisi, $batas ";
 
 
                 $query_k = mysqli_query($koneksi, $sql_k);
