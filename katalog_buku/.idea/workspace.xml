@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8eb2c76-d2ef-492c-80c6-6356e10d5c1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/detailblog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/detailblog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/detailbuku.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/detailbuku.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/detailkonten.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/detailkonten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/editblog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editblog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/editkonten.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editkonten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/kategoribuku.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/kategoribuku.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/konfirmasieditpenerbit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/konfirmasieditpenerbit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/konfirmasitambahblog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/konfirmasitambahblog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/konten.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/konten.php" afterDir="false" />
-    </list>
+    <list default="true" id="b8eb2c76-d2ef-492c-80c6-6356e10d5c1b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/MEGA/IT &amp; Code/Sanbercode-Batch-24/Pengenalan-VueJS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Sanbercode-Batch-24/Tugas-Harian-Bagian-2/Tugas-9-Dan-10-Pengenalan-VueJS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -88,6 +76,7 @@
       <workItem from="1620209294722" duration="43000" />
       <workItem from="1620222137987" duration="984000" />
       <workItem from="1620227027034" duration="1189000" />
+      <workItem from="1620389036226" duration="51000" />
     </task>
     <servers />
   </component>
